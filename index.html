@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bàn Thờ Online ://</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .frame {
+            width: 400px;
+            height: 500px;
+            background: url('https://via.placeholder.com/400x500/8B4513/FFFFFF?text=Khung+Hình') no-repeat center;
+            background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        #imageContainer {
+            width: 80%;
+            height: 80%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #ccc;
+            overflow: hidden;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bàn Thờ Online</h1>
+    <input type="file" id="fileInput" accept="image/*" style="margin-bottom: 10px;">
+    <div class="frame">
+        <div id="imageContainer">Tải Ảnh Lên</div>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const imageContainer = document.getElementById('imageContainer');
+
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imageContainer.innerHTML = `<img src="${e.target.result}" alt="Uploaded Image">`;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+  <a>Liên Hệ: 0985769526 Để Mua Code</a>
+</html>
